@@ -1,0 +1,30 @@
+#include <iostream>
+//#include <iomanip>
+//#include <windows.h>
+#include <vector>
+using namespace std;
+
+int main()
+{
+
+	vector <int> myvec;
+
+
+	for (int i = 0; i < 10; i++)
+		myvec.insert(myvec.end(), i);
+	//myvec.end() - pointer to vector end
+	//myvec.insert(myvec.end(), i) == myvec.push_back(i)
+
+	auto j = myvec.begin();
+
+	while (j<myvec.end()){
+		printf("(%d : %p)", *j, j);
+		j++;
+	}
+
+
+	cout << endl;
+
+
+	return 0;
+}

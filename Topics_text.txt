@@ -1,0 +1,250 @@
+
+What is modifier in C and different types of modifiers
+
+Modifiers are keywords in c which changes the meaning of basic data type in c. It specifies the amount of memory space to be allocated for a variable. Modifiers are prefixed with basic data types to modify the memory allocated for a variable. There are five data type modifiers in C Programming Language:
+
+    long
+    short
+    signed
+    unsigned
+    long long
+
+https://www.sitesbay.com/cprogramming/c-datatype-modifiers
+
+4 bits 0000 1111 = 15(10)
+8 bits 1111 1111 = 255(10)
+
+8 bits signed {0/1} 111 1111 = -127(10) ... + 127
+
+STRINGS
+
+char greeting[6] = {'H', 'e', 'l', 'l', 'o', '\0'};
+char greeting[] = "Hello";
+
+More examples...
+
+
+BITWISE OPERATIONS
+
+#include <stdio.h>
+
+char symb;
+int i;
+
+int main()
+{
+
+for (i = 0; i < 26; i++)
+{
+symb = 'A' + i;
+putchar(symb);
+symb = symb | 0b00100000;
+putchar(symb);
+symb = symb & 0b11011111;
+putchar(symb);
+putchar(' ');
+
+ }
+
+putchar('\n');
+
+}
+
+
+IF and SWITCH
+
+switch( expression )
+{
+	case value-1:
+			Block-1;
+			Break;
+	case value-2:
+			Block-2;
+			Break;
+	case value-n:
+			Block-n;
+			Break;
+	default:
+			Block-1;
+			Break;
+}
+Statement-x;
+
+
+GO TO, BREAK, CONTINUE
+
+    #include <stdio.h>  
+    int main()   
+    {  
+      int num,i=1;   
+      printf("Enter the number whose table you want to print?");   
+      scanf("%d",&num);  
+      table:   
+      printf("%d x %d = %d\n",num,i,num*i);  
+      i++;  
+      if(i<=10)  
+      goto table;    
+    }
+
+// Replace go to with a loop  
+
+
+STRUCTURES
+
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
+#define NEWLINE putchar('\n'); 
+
+
+int main()
+{
+    struct person
+    {
+       char fio[100];
+       int birth;
+       double salary;           
+                 } team[10], tmp, tmpteam[10];
+    int num, i;
+    
+    
+    
+    printf("Сколько сотрудников? ");
+    scanf("%d", &num);
+    
+    for(i=0; i< num; i++)
+    {
+       printf("Введите фамилию >> ");
+       scanf("%s", team[i].fio);
+       NEWLINE
+       printf("Введите год рождения >> "); 
+       scanf("%d", &team[i].birth);
+       NEWLINE
+       printf("Введите оклад >> "); 
+       scanf("%d", &team[i].salary);
+       NEWLINE     
+             }
+    for(i=0; i< num; i++)
+    {
+       printf("%s ", team[i].fio);
+       printf("%d ", team[i].birth);
+       printf("%d ", team[i].salary);
+       NEWLINE     
+             }
+             
+    tmp = team[0];
+    team[0] = team[1];
+    team[1] = tmp;
+    
+    for(i=0; i< num; i++)
+    {
+       printf("%s ", team[i].fio);
+       printf("%d ", team[i].birth);
+       printf("%d ", team[i].salary);
+       NEWLINE     
+       }
+             
+    
+    return 0;
+    
+    
+    }
+
+
+RANDOM GENERATORS
+
+// C program to generate random numbers
+#include <stdio.h>
+#include <stdlib.h>
+#include<time.h>
+
+// Driver program
+int main(void)
+{
+	// This program will create different sequence of
+	// random numbers on every program run
+
+	// Use current time as seed for random generator
+	srand(time(0));
+
+	for(int i = 0; i<4; i++)
+		printf(" %d ", rand());
+
+	return 0;
+}
+
+
+SCOPE OF VISIBILITY
+
+#include<stdio.h>
+
+// variable with file scope
+int x = 10;
+
+void func()
+{
+	// x is available in func() function
+	x += 10; // x now equals 10 + 10 = 20
+	printf("Value of x is %d\n", x);
+}
+
+int main()
+{
+	func();
+	// x is also available in main() function
+	x += 30; // x now equals 20 + 30 = 50
+	printf("Value of x is %d", x);
+	return 0;
+}
+
+
+#include<stdio.h>
+
+int main()
+{
+	int a = 5;
+	int b = 10;
+	
+	{// inner block of code having block scope
+		int sum = a + b;
+		printf("Sum of a and b: %d", sum);
+	}
+
+	// the below statement will throw an error because 
+	// sum variable is not available outside the scope of above block
+	// printf("Sum of a and b: %d", sum);
+	
+	return 0;
+}
+
+
+#include<stdio.h>
+
+void findAge()
+{  
+    // the age variable is not accessible outside the function findAge() 
+    // as it is having local scope to the function i.e. function scope
+    int age=18;   
+}
+ 
+int main()
+{
+    printf("Age is %d", age);
+     
+    return 0;
+}
+
+
+STORAGE CLASSES
+
+A storage class defines the scope (visibility) and life-time of variables and/or functions within a C++ Program. These specifiers precede the type that they modify. There are following storage classes, which can be used in a C++ Program
+
+    auto
+    register
+    static
+    extern
+    mutable
+
+
+
+
