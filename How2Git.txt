@@ -68,9 +68,9 @@ git remote add origin https://github.com/grivis/SecondRepo.git
 
 Push the files into GitHub
 
-git push https://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@github.com/grivis/SecondRepo.git
+git push https://*****************@github.com/grivis/SecondRepo.git
 
-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 is your GitHub personal token
+********************** is your GitHub personal token
 You can get it if you have a GitHub account
 
 Settings --> Developer Settings --> Personal access tokens. 
@@ -93,7 +93,7 @@ git status
 
 git commit -m '<commit_message>'
 
-git push https://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@github.com/grivis/SecondRepo.git
+git push https://****************q@github.com/grivis/SecondRepo.git
 
 You will see changes in your GitHub repository
 
